@@ -31,6 +31,41 @@
       "name": "docs",
       "description": "Sync docs with code",
       "prompt": "You are running the /docs workflow.\n\n## Hard constraints\n- Only update stale or incomplete docs.\n- Keep docs concise and aligned with interfaces.\n\n## Targets\n- README\n- API docs / inline comments\n- Examples\n\n## Output format\n### Summary\n### Docs updated\n### Remaining doc debt\n\nChanges to document: {{{ input }}}"
+    },
+    {
+      "name": "refactor",
+      "description": "Restructure code while preserving behavior",
+      "prompt": "You are running the /refactor workflow.\n\n## Hard constraints\n- Preserve existing behavior exactly (refactor, not rewrite).\n- Keep changes minimal and focused.\n- Explain each change inline with comments if non-obvious.\n- Run tests before and after to verify behavior unchanged.\n- Do NOT add new features or fix unrelated bugs.\n\n## Process\n1. Read and understand the target code.\n2. Identify refactoring opportunities (extract methods, reduce duplication, improve naming, simplify conditionals, improve testability, reduce coupling).\n3. Apply changes incrementally.\n4. Verify tests still pass.\n5. Document what changed and why.\n\n## Output format\n### Summary\n### Changes made\n### Behavior verification\n### Follow-up suggestions\n\nCode to refactor: {{{ input }}}"
+    },
+    {
+      "name": "arch-explain",
+      "description": "Summarize architecture and responsibilities",
+      "prompt": "You are running the /arch-explain workflow.\n\n## Hard constraints\n- Do NOT edit any files.\n- Focus on helping new contributors ramp up quickly.\n- Be concise but thorough.\n- Use diagrams (ASCII or mermaid) where helpful.\n\n## Process\n1. Scan project structure (package.json, Cargo.toml, go.mod, etc.).\n2. Identify entry points and main modules.\n3. Map dependencies and data flow.\n4. Document key patterns and conventions.\n5. Note any unusual architecture decisions.\n\n## Output format\n### Project overview\n### Tech stack\n### Directory structure\n### Core components\n### Data flow\n### Key patterns\n### Entry points\n### Quick start for contributors\n\nFocus area: {{{ input }}}"
+    },
+    {
+      "name": "summarize",
+      "description": "Condense content into task-focused summary",
+      "prompt": "You are running the /summarize workflow.\n\n## Hard constraints\n- Do NOT edit any files.\n- Keep summary actionable and task-focused.\n- Preserve key details, decisions, and action items.\n- Note any unresolved questions.\n\n## Process\n1. Read/fetch the source content.\n2. Identify the core topic and purpose.\n3. Extract key points and decisions.\n4. Note action items and owners.\n5. Flag unresolved questions.\n\n## Output format\n### TL;DR\n### Key points\n### Decisions made\n### Action items\n### Open questions\n\nContent to summarize: {{{ input }}}"
+    },
+    {
+      "name": "write-spec",
+      "description": "Turn description into technical specification",
+      "prompt": "You are running the /write-spec workflow.\n\n## Hard constraints\n- Do NOT edit code files.\n- Output a complete spec ready for implementation.\n- Include clear acceptance criteria.\n- Identify edge cases and unknowns.\n\n## Process\n1. Parse and understand the requirement.\n2. Research existing codebase for context.\n3. Define scope and non-scope.\n4. Break into implementation steps.\n5. Define acceptance criteria.\n6. Identify risks and unknowns.\n\n## Output format\n### Title\n### Summary\n### Background\n### Scope (in/out)\n### Technical approach\n### Implementation steps\n### API/Interface changes\n### Data model changes\n### Acceptance criteria\n### Edge cases\n### Risks and unknowns\n### Dependencies\n### Testing strategy\n\nRequirement: {{{ input }}}"
+    },
+    {
+      "name": "full-context",
+      "description": "Build comprehensive repo mental model",
+      "prompt": "You are running the /full-context workflow.\n\n## Hard constraints\n- Do NOT edit any files.\n- Build a global view for later commands.\n- Identify key folders, entry points, and config.\n\n## Process\n1. Scan project structure and config files.\n2. Identify main entry points.\n3. Map module dependencies.\n4. Document key patterns.\n5. Note testing and build setup.\n\n## Output format\n### Project type and stack\n### Entry points\n### Key directories\n### Config files\n### Dependencies\n### Build/test commands\n### Patterns to follow\n\nProject: {{{ input }}}"
+    },
+    {
+      "name": "deep-review",
+      "description": "Pre-merge exhaustive review",
+      "prompt": "You are running the /deep-review workflow.\n\n## Hard constraints\n- Do NOT edit files.\n- Focus on security, performance, and maintainability.\n- Flag anything that could cause production issues.\n\n## Review areas\n- Security vulnerabilities (OWASP Top 10)\n- Performance bottlenecks\n- Error handling gaps\n- Race conditions\n- Resource leaks\n- Breaking changes\n- Test coverage\n\n## Output format\n### Summary\n### Critical issues\n### Security concerns\n### Performance concerns\n### Maintainability\n### Test gaps\n### Approval recommendation\n\nCode to review: {{{ input }}}"
+    },
+    {
+      "name": "pr-description",
+      "description": "Generate PR description from diff",
+      "prompt": "You are running the /pr-description workflow.\n\n## Hard constraints\n- Do NOT edit files.\n- Generate a clear, complete PR description.\n- Include testing notes and rollout considerations.\n\n## Output format\n## What\n[Brief description of changes]\n\n## Why\n[Motivation and context]\n\n## How\n[Implementation approach]\n\n## Testing\n[How this was tested]\n\n## Risks / rollout\n[Deployment considerations]\n\n## Follow-ups\n[Future work if any]\n\nChanges: {{{ input }}}"
     }
   ]
 }

@@ -214,7 +214,9 @@
       "Bash(Select-Object -First 50)",
       "Bash(pwsh -NoProfile -Command \"& { . ./installer/lib/detect-platform.ps1; Get-PlatformInfo | ConvertTo-Json }\")",
       "Bash(bash lib/detect-platform.sh:*)",
-      "Bash(gh repo create:*)"
+      "Bash(gh repo create:*)",
+      "Bash(cmd /c 'dir /AL /S C:\\ 2>nul')",
+      "Bash(cmd /c 'dir /AL /S P:\\ 2>nul')"
     ]
   }
 }

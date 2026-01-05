@@ -123,9 +123,9 @@ Portable slash commands for AI coding assistants. Same workflows, vendor-specifi
 
 | Platform | Slash Commands | Format | Location |
 |----------|---------------|--------|----------|
-| **Claude Code** | ✅ 10 commands | Markdown + YAML | `.claude/commands/` |
-| **Cursor** | ✅ 11 commands | Markdown | `.cursor/commands/` |
-| **Continue** | ✅ 6 commands | JSON | `.continue/config.json` |
+| **Claude Code** | ✅ 14 commands | Markdown + YAML | `.claude/commands/` |
+| **Cursor** | ✅ 15 commands | Markdown | `.cursor/commands/` |
+| **Continue** | ✅ 13 commands | JSON | `.continue/config.json` |
 | **Claude Desktop** | ❌ None | N/A | Uses MCP only |
 | **VS Code Copilot** | ❌ Built-in only | N/A | N/A |
 | **Windsurf** | ❌ Not supported | N/A | N/A |
@@ -139,9 +139,13 @@ Portable slash commands for AI coding assistants. Same workflows, vendor-specifi
 | `/implement` | Execute an approved plan | ✅ Yes |
 | `/debug` | Root-cause analysis + minimal fix | ✅ Yes |
 | `/review` | Deep code review | ❌ No |
+| `/refactor` | Restructure code preserving behavior | ✅ Yes |
 | `/test-gen` | Generate/upgrade tests | ✅ Yes |
 | `/update-docs` | Sync docs with code | ✅ Yes |
 | `/full-context` | Build repo mental model | ❌ No |
+| `/arch-explain` | Architecture overview for contributors | ❌ No |
+| `/summarize` | Condense files/issues into summary | ❌ No |
+| `/write-spec` | Turn description into tech spec | ❌ No |
 | `/deep-review` | Pre-merge security/perf review | ❌ No |
 | `/pr-description` | Generate PR description | ❌ No |
 | `/research` | Deep research using MCP tools | ❌ No |
@@ -261,14 +265,14 @@ P:\dev\config\
 │   └── .claude\              # Nested config structure
 ├── claude-code\               # Claude Code CLI slash commands
 │   ├── README.md             # Installation guide
-│   └── commands\             # 10 slash commands (/plan, /implement, etc.)
+│   └── commands\             # 14 slash commands (/plan, /implement, etc.)
 ├── claude-desktop\           # Claude Desktop configs
 ├── continue\                 # Continue extension commands
 │   ├── README.md             # Installation guide
 │   └── slash-commands.json   # Commands for config.json
 ├── cursor\                   # Cursor IDE slash commands & rules
 │   ├── README.md             # Installation guide
-│   ├── commands\             # 11 slash commands (/plan, /implement, etc.)
+│   ├── commands\             # 15 slash commands (/plan, /implement, etc.)
 │   └── rules\                # Project rules (.mdc files)
 ├── vscode\                   # VS Code settings
 │   └── extensions.json       # Extension list
