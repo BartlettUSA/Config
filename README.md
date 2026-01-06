@@ -123,9 +123,9 @@ Portable slash commands for AI coding assistants. Same workflows, vendor-specifi
 
 | Platform | Slash Commands | Format | Location |
 |----------|---------------|--------|----------|
-| **Claude Code** | ✅ 14 commands | Markdown + YAML | `.claude/commands/` |
-| **Cursor** | ✅ 15 commands | Markdown | `.cursor/commands/` |
-| **Continue** | ✅ 13 commands | JSON | `.continue/config.json` |
+| **Claude Code** | ✅ 37 commands | Markdown + YAML | `.claude/commands/` |
+| **Cursor** | ✅ 38 commands | Markdown | `.cursor/commands/` |
+| **Continue** | ✅ 30 commands | JSON | `.continue/config.json` |
 | **Claude Desktop** | ❌ None | N/A | Uses MCP only |
 | **VS Code Copilot** | ❌ Built-in only | N/A | N/A |
 | **Windsurf** | ❌ Not supported | N/A | N/A |
@@ -265,14 +265,14 @@ P:\dev\config\
 │   └── .claude\              # Nested config structure
 ├── claude-code\               # Claude Code CLI slash commands
 │   ├── README.md             # Installation guide
-│   └── commands\             # 14 slash commands (/plan, /implement, etc.)
+│   └── commands\             # 37 slash commands (/plan, /implement, etc.)
 ├── claude-desktop\           # Claude Desktop configs
 ├── continue\                 # Continue extension commands
 │   ├── README.md             # Installation guide
 │   └── slash-commands.json   # Commands for config.json
 ├── cursor\                   # Cursor IDE slash commands & rules
 │   ├── README.md             # Installation guide
-│   ├── commands\             # 15 slash commands (/plan, /implement, etc.)
+│   ├── commands\             # 38 slash commands (/plan, /implement, etc.)
 │   └── rules\                # Project rules (.mdc files)
 ├── vscode\                   # VS Code settings
 │   └── extensions.json       # Extension list

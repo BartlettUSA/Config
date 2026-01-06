@@ -2,9 +2,9 @@
 
 Portable Cursor slash commands and rules for cross-project consistency.
 
-## Installation
+**Commands:** 38 | **Format:** Markdown
 
-Copy or symlink to your project's `.cursor/` directory:
+## Installation
 
 ```powershell
 # Option 1: Symlink (recommended - stays in sync)
@@ -18,25 +18,76 @@ Copy-Item -Recurse "P:\dev\config\cursor\rules" ".cursor\"
 
 Or for user-level (all projects):
 ```powershell
-# Global Cursor config
 Copy-Item -Recurse "P:\dev\config\cursor\commands" "$env:USERPROFILE\.cursor\"
 ```
 
 ## Commands
 
-| Command | Purpose | MCP Integration |
-|---------|---------|-----------------|
-| `/plan` | Spec-first implementation plan (no edits) | Context7 |
-| `/implement` | Execute approved plan | Context7 |
-| `/debug` | Root-cause analysis + minimal fix | Context7 |
-| `/review` | Deep code review | Context7 |
-| `/test-gen` | Generate/upgrade tests | Context7 |
-| `/update-docs` | Sync docs with code | - |
-| `/full-context` | Build repo mental model | - |
-| `/deep-review` | Pre-merge security/perf review | Context7 |
-| `/pr-description` | Generate PR description | - |
-| `/browser-test` | Automated browser testing | Kapture, Playwright |
-| `/research` | Deep research on topics | Context7, Perplexity, GitHub |
+### Core Workflows
+| Command | Purpose |
+|---------|---------|
+| `/plan` | Spec-first implementation plan (no edits) |
+| `/implement` | Execute approved plan |
+| `/debug` | Root-cause analysis + minimal fix |
+| `/review` | Deep code review |
+| `/refactor` | Restructure code preserving behavior |
+| `/test-gen` | Generate/upgrade tests |
+| `/update-docs` | Sync docs with code |
+
+### Git & Workflow
+| Command | Purpose |
+|---------|---------|
+| `/commit` | Conventional commit with semantic message |
+| `/create-pr` | Full PR workflow (branch, commit, submit) |
+| `/fix-github-issue` | Analyze and fix GitHub issue with tests |
+| `/git-workflow` | Manage branching, merges, and sync |
+
+### Security
+| Command | Purpose |
+|---------|---------|
+| `/security-scan` | OWASP vulnerability assessment |
+| `/deps-audit` | Dependency security and license check |
+| `/compliance-check` | Regulatory compliance (GDPR, HIPAA, SOC2, PCI) |
+| `/check` | Comprehensive code quality check |
+
+### Testing
+| Command | Purpose |
+|---------|---------|
+| `/tdd` | Test-driven development workflow |
+| `/tdd-cycle` | Full red-green-refactor cycle |
+| `/test-harness` | Generate comprehensive test suite |
+
+### DevOps
+| Command | Purpose |
+|---------|---------|
+| `/deploy-checklist` | Pre-deployment verification |
+| `/docker-optimize` | Container optimization |
+| `/k8s-manifest` | Kubernetes manifest generation |
+| `/release` | Version bump, changelog, and release |
+
+### Context Management
+| Command | Purpose |
+|---------|---------|
+| `/context-prime` | Prime Claude with project understanding |
+| `/context-save` | Persist project state and decisions |
+| `/context-restore` | Restore saved project state |
+| `/doc-generate` | Generate API docs, JSDoc, TypeDoc |
+
+### Advanced
+| Command | Purpose |
+|---------|---------|
+| `/full-context` | Build repo mental model |
+| `/full-review` | Multi-perspective code review |
+| `/smart-fix` | Dynamic problem-solving |
+| `/incident-response` | Production issue resolution |
+| `/tech-debt` | Technical debt assessment |
+| `/deep-review` | Pre-merge security/perf review |
+| `/arch-explain` | Architecture overview |
+| `/summarize` | Condense files/issues |
+| `/write-spec` | Turn description into tech spec |
+| `/pr-description` | Generate PR description |
+| `/browser-test` | Automated browser testing |
+| `/research` | Deep research on topics |
 
 ## Rules
 

@@ -216,7 +216,20 @@
       "Bash(bash lib/detect-platform.sh:*)",
       "Bash(gh repo create:*)",
       "Bash(cmd /c 'dir /AL /S C:\\ 2>nul')",
-      "Bash(cmd /c 'dir /AL /S P:\\ 2>nul')"
+      "Bash(cmd /c 'dir /AL /S P:\\ 2>nul')",
+      "Bash(claude mcp list:*)",
+      "Bash(cmd /c \"dir /a:l /s P:\\ 2>nul\")",
+      "Bash(cmd /c \"dir /a:l /s C:\\Users 2>nul\")",
+      "Bash(npx -y agentic-pm:*)",
+      "Bash(dir \"%LOCALAPPDATA%\\Syncthing\")",
+      "Bash(syncthing:*)",
+      "Bash(dir /s /b C:UsersbartaAppData*config.xml)",
+      "Bash(cmd /c \"dir /s /b C:\\Users\\barta\\AppData\\*config.xml 2>nul\")",
+      "Bash(cmd /c \"dir /s /b C:\\Users\\barta\\AppData 2>nul\")",
+      "Bash(cmd /c \"if exist C:\\ProgramData\\Syncthing\\config.xml echo C:\\ProgramData\\Syncthing\\config.xml\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File:*)",
+      "Bash(netsh interface ipv4 show excludedportrange:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: Add 23 new slash commands across Claude Code, Cursor, and Continue\n\nNew commands sourced from wshobson/commands and awesome-claude-code:\n\nGit & Workflow (4):\n- commit: Conventional commits with semantic messages\n- create-pr: PR creation with templates\n- fix-github-issue: Issue resolution workflow\n- git-workflow: Branching strategy guidance\n\nSecurity (4):\n- security-scan: OWASP vulnerability scanning\n- deps-audit: Dependency vulnerability checks\n- compliance-check: GDPR/HIPAA/SOC2/PCI-DSS compliance\n- check: Pre-commit quality gates\n\nTesting (3):\n- tdd: Test-driven development workflow\n- tdd-cycle: Red-green-refactor cycle\n- test-harness: Test infrastructure setup\n\nDevOps (4):\n- deploy-checklist: Deployment verification\n- docker-optimize: Container optimization\n- k8s-manifest: Kubernetes manifest generation\n- release: Semantic versioning releases\n\nContext (4):\n- context-prime: Codebase onboarding\n- context-save: Session state persistence\n- context-restore: Session restoration\n- doc-generate: Documentation generation\n\nAdvanced Workflows (4):\n- full-review: Multi-perspective code review\n- smart-fix: Intelligent problem resolution\n- incident-response: Production incident handling\n- tech-debt: Technical debt analysis\n\nPlatform totals: Claude Code 37, Cursor 37, Continue 31\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")"
     ]
   }
 }
