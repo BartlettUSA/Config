@@ -35,37 +35,122 @@
     {
       "name": "refactor",
       "description": "Restructure code while preserving behavior",
-      "prompt": "You are running the /refactor workflow.\n\n## Hard constraints\n- Preserve existing behavior exactly (refactor, not rewrite).\n- Keep changes minimal and focused.\n- Explain each change inline with comments if non-obvious.\n- Run tests before and after to verify behavior unchanged.\n- Do NOT add new features or fix unrelated bugs.\n\n## Process\n1. Read and understand the target code.\n2. Identify refactoring opportunities (extract methods, reduce duplication, improve naming, simplify conditionals, improve testability, reduce coupling).\n3. Apply changes incrementally.\n4. Verify tests still pass.\n5. Document what changed and why.\n\n## Output format\n### Summary\n### Changes made\n### Behavior verification\n### Follow-up suggestions\n\nCode to refactor: {{{ input }}}"
+      "prompt": "You are running the /refactor workflow.\n\n## Hard constraints\n- Preserve existing behavior exactly (refactor, not rewrite).\n- Keep changes minimal and focused.\n- Run tests before and after to verify behavior unchanged.\n- Do NOT add new features or fix unrelated bugs.\n\n## Process\n1. Read and understand the target code.\n2. Identify refactoring opportunities.\n3. Apply changes incrementally.\n4. Verify tests still pass.\n5. Document what changed and why.\n\n## Output format\n### Summary\n### Changes made\n### Behavior verification\n### Follow-up suggestions\n\nCode to refactor: {{{ input }}}"
     },
     {
       "name": "arch-explain",
       "description": "Summarize architecture and responsibilities",
-      "prompt": "You are running the /arch-explain workflow.\n\n## Hard constraints\n- Do NOT edit any files.\n- Focus on helping new contributors ramp up quickly.\n- Be concise but thorough.\n- Use diagrams (ASCII or mermaid) where helpful.\n\n## Process\n1. Scan project structure (package.json, Cargo.toml, go.mod, etc.).\n2. Identify entry points and main modules.\n3. Map dependencies and data flow.\n4. Document key patterns and conventions.\n5. Note any unusual architecture decisions.\n\n## Output format\n### Project overview\n### Tech stack\n### Directory structure\n### Core components\n### Data flow\n### Key patterns\n### Entry points\n### Quick start for contributors\n\nFocus area: {{{ input }}}"
+      "prompt": "You are running the /arch-explain workflow.\n\n## Hard constraints\n- Do NOT edit any files.\n- Focus on helping new contributors ramp up quickly.\n- Use diagrams (ASCII or mermaid) where helpful.\n\n## Process\n1. Scan project structure and config files.\n2. Identify entry points and main modules.\n3. Map dependencies and data flow.\n4. Document key patterns and conventions.\n\n## Output format\n### Project overview\n### Tech stack\n### Directory structure\n### Core components\n### Data flow\n### Key patterns\n### Entry points\n\nFocus area: {{{ input }}}"
     },
     {
       "name": "summarize",
       "description": "Condense content into task-focused summary",
-      "prompt": "You are running the /summarize workflow.\n\n## Hard constraints\n- Do NOT edit any files.\n- Keep summary actionable and task-focused.\n- Preserve key details, decisions, and action items.\n- Note any unresolved questions.\n\n## Process\n1. Read/fetch the source content.\n2. Identify the core topic and purpose.\n3. Extract key points and decisions.\n4. Note action items and owners.\n5. Flag unresolved questions.\n\n## Output format\n### TL;DR\n### Key points\n### Decisions made\n### Action items\n### Open questions\n\nContent to summarize: {{{ input }}}"
+      "prompt": "You are running the /summarize workflow.\n\n## Hard constraints\n- Do NOT edit any files.\n- Keep summary actionable and task-focused.\n- Preserve key details, decisions, and action items.\n\n## Output format\n### TL;DR\n### Key points\n### Decisions made\n### Action items\n### Open questions\n\nContent to summarize: {{{ input }}}"
     },
     {
       "name": "write-spec",
       "description": "Turn description into technical specification",
-      "prompt": "You are running the /write-spec workflow.\n\n## Hard constraints\n- Do NOT edit code files.\n- Output a complete spec ready for implementation.\n- Include clear acceptance criteria.\n- Identify edge cases and unknowns.\n\n## Process\n1. Parse and understand the requirement.\n2. Research existing codebase for context.\n3. Define scope and non-scope.\n4. Break into implementation steps.\n5. Define acceptance criteria.\n6. Identify risks and unknowns.\n\n## Output format\n### Title\n### Summary\n### Background\n### Scope (in/out)\n### Technical approach\n### Implementation steps\n### API/Interface changes\n### Data model changes\n### Acceptance criteria\n### Edge cases\n### Risks and unknowns\n### Dependencies\n### Testing strategy\n\nRequirement: {{{ input }}}"
+      "prompt": "You are running the /write-spec workflow.\n\n## Hard constraints\n- Do NOT edit code files.\n- Output a complete spec ready for implementation.\n- Include clear acceptance criteria.\n\n## Output format\n### Title\n### Summary\n### Background\n### Scope (in/out)\n### Technical approach\n### Implementation steps\n### Acceptance criteria\n### Edge cases\n### Risks and unknowns\n\nRequirement: {{{ input }}}"
     },
     {
       "name": "full-context",
       "description": "Build comprehensive repo mental model",
-      "prompt": "You are running the /full-context workflow.\n\n## Hard constraints\n- Do NOT edit any files.\n- Build a global view for later commands.\n- Identify key folders, entry points, and config.\n\n## Process\n1. Scan project structure and config files.\n2. Identify main entry points.\n3. Map module dependencies.\n4. Document key patterns.\n5. Note testing and build setup.\n\n## Output format\n### Project type and stack\n### Entry points\n### Key directories\n### Config files\n### Dependencies\n### Build/test commands\n### Patterns to follow\n\nProject: {{{ input }}}"
+      "prompt": "You are running the /full-context workflow.\n\n## Hard constraints\n- Do NOT edit any files.\n- Build a global view for later commands.\n\n## Process\n1. Scan project structure and config files.\n2. Identify main entry points.\n3. Map module dependencies.\n4. Document key patterns.\n\n## Output format\n### Project type and stack\n### Entry points\n### Key directories\n### Config files\n### Build/test commands\n### Patterns to follow\n\nProject: {{{ input }}}"
     },
     {
       "name": "deep-review",
       "description": "Pre-merge exhaustive review",
-      "prompt": "You are running the /deep-review workflow.\n\n## Hard constraints\n- Do NOT edit files.\n- Focus on security, performance, and maintainability.\n- Flag anything that could cause production issues.\n\n## Review areas\n- Security vulnerabilities (OWASP Top 10)\n- Performance bottlenecks\n- Error handling gaps\n- Race conditions\n- Resource leaks\n- Breaking changes\n- Test coverage\n\n## Output format\n### Summary\n### Critical issues\n### Security concerns\n### Performance concerns\n### Maintainability\n### Test gaps\n### Approval recommendation\n\nCode to review: {{{ input }}}"
+      "prompt": "You are running the /deep-review workflow.\n\n## Hard constraints\n- Do NOT edit files.\n- Focus on security, performance, and maintainability.\n- Flag anything that could cause production issues.\n\n## Review areas\n- Security vulnerabilities (OWASP Top 10)\n- Performance bottlenecks\n- Error handling gaps\n- Race conditions\n- Resource leaks\n\n## Output format\n### Summary\n### Critical issues\n### Security concerns\n### Performance concerns\n### Approval recommendation\n\nCode to review: {{{ input }}}"
     },
     {
       "name": "pr-description",
       "description": "Generate PR description from diff",
-      "prompt": "You are running the /pr-description workflow.\n\n## Hard constraints\n- Do NOT edit files.\n- Generate a clear, complete PR description.\n- Include testing notes and rollout considerations.\n\n## Output format\n## What\n[Brief description of changes]\n\n## Why\n[Motivation and context]\n\n## How\n[Implementation approach]\n\n## Testing\n[How this was tested]\n\n## Risks / rollout\n[Deployment considerations]\n\n## Follow-ups\n[Future work if any]\n\nChanges: {{{ input }}}"
+      "prompt": "You are running the /pr-description workflow.\n\n## Output format\n## What\n[Brief description of changes]\n\n## Why\n[Motivation and context]\n\n## How\n[Implementation approach]\n\n## Testing\n[How this was tested]\n\n## Risks\n[Deployment considerations]\n\nChanges: {{{ input }}}"
+    },
+    {
+      "name": "commit",
+      "description": "Create conventional commit with semantic message",
+      "prompt": "You are running the /commit workflow.\n\n## Hard constraints\n- Follow Conventional Commits (feat, fix, docs, style, refactor, test, chore)\n- Use appropriate emoji prefix\n- Keep subject under 72 characters\n\n## Emoji mapping\n| Type | Emoji |\n|------|-------|\n| feat | ✨ |\n| fix | 🐛 |\n| docs | 📚 |\n| refactor | ♻️ |\n| test | ✅ |\n| chore | 🔧 |\n\n## Process\n1. Analyze staged changes\n2. Determine commit type\n3. Generate message: <emoji> <type>(<scope>): <description>\n\nChanges: {{{ input }}}"
+    },
+    {
+      "name": "create-pr",
+      "description": "Full pull request workflow",
+      "prompt": "You are running the /create-pr workflow.\n\n## Hard constraints\n- Create feature branch from latest main\n- Use conventional branch naming: <type>/<name>\n- PR title follows: <type>: <description>\n\n## Process\n1. Create feature branch\n2. Commit changes\n3. Push and create PR\n\n## PR body template\n## Summary\n<description>\n\n## Changes\n- <bullet list>\n\n## Test Plan\n- [ ] <verification steps>\n\nFeature: {{{ input }}}"
+    },
+    {
+      "name": "fix-github-issue",
+      "description": "Analyze and fix GitHub issue",
+      "prompt": "You are running the /fix-github-issue workflow.\n\n## Hard constraints\n- Read the full issue before starting\n- Write or update tests covering the fix\n- Create atomic commits with conventional messages\n\n## Process\n1. Fetch and analyze issue\n2. Identify root cause or approach\n3. Write failing test (TDD)\n4. Implement fix\n5. Verify tests pass\n6. Create PR\n\n## Output format\n### Issue Summary\n### Root Cause\n### Changes Made\n### Tests Added\n\nIssue: {{{ input }}}"
+    },
+    {
+      "name": "security-scan",
+      "description": "OWASP vulnerability assessment",
+      "prompt": "You are running the /security-scan workflow.\n\n## Hard constraints\n- Never expose secrets in output\n- Prioritize by severity\n- Provide actionable remediation\n\n## Scan categories\n1. Dependency vulnerabilities\n2. Secret detection (API keys, passwords)\n3. OWASP Top 10 (SQL injection, XSS, etc.)\n4. Configuration issues\n\n## Output format\n### Security Scan Report\n| Severity | Issue | File | Remediation |\n|----------|-------|------|-------------|\n\n### Summary\n- Critical: <n>\n- High: <n>\n\nTarget: {{{ input }}}"
+    },
+    {
+      "name": "deps-audit",
+      "description": "Dependency security and license check",
+      "prompt": "You are running the /deps-audit workflow.\n\n## Hard constraints\n- Check all detected package managers\n- Flag GPL/AGPL in proprietary projects\n- Include transitive dependencies\n\n## Output format\n### Vulnerabilities\n| Package | Severity | CVE | Fix |\n\n### License Issues\n| Package | License | Risk |\n\n### Outdated\n| Package | Current | Latest |\n\nProject: {{{ input }}}"
+    },
+    {
+      "name": "check",
+      "description": "Comprehensive code quality check",
+      "prompt": "You are running the /check workflow.\n\n## Checks\n1. Linting (ESLint, Ruff, etc.)\n2. Formatting (Prettier, Black, etc.)\n3. Type checking (tsc, mypy)\n4. Tests\n5. Build\n\n## Output format\n| Check | Status | Issues |\n|-------|--------|--------|\n\n### Fix Commands\n```bash\n<commands>\n```\n\nTarget: {{{ input }}}"
+    },
+    {
+      "name": "tdd",
+      "description": "Test-driven development workflow",
+      "prompt": "You are running the /tdd workflow.\n\n## TDD Cycle: Red → Green → Refactor\n\n### RED Phase\n- Write failing tests first\n- Cover happy path, edge cases, errors\n\n### GREEN Phase\n- Write minimal code to pass\n- Do NOT add extra functionality\n\n### REFACTOR Phase\n- Improve code quality\n- Keep tests green\n\n## Output format\n### RED Phase\n<failing test output>\n\n### GREEN Phase\n<passing test output>\n\n### REFACTOR Phase\n<improvements made>\n\nFeature: {{{ input }}}"
+    },
+    {
+      "name": "deploy-checklist",
+      "description": "Pre-deployment verification",
+      "prompt": "You are running the /deploy-checklist workflow.\n\n## Checklist\n1. Code quality (tests, lint, types, build)\n2. Security (no secrets, deps audited)\n3. Database (migrations, backwards compatible)\n4. Configuration (env vars, feature flags)\n5. Monitoring (health endpoint, alerts)\n\n## Rollback procedure\n1. Identify issue\n2. Run rollback command\n3. Verify and notify\n\n## Output format\n| Category | Status |\n|----------|--------|\n\n### Ready to deploy: ✅/❌\n\nEnvironment: {{{ input }}}"
+    },
+    {
+      "name": "release",
+      "description": "Version bump and changelog",
+      "prompt": "You are running the /release workflow.\n\n## Semantic versioning\n- patch: Bug fixes (1.0.0 → 1.0.1)\n- minor: New features (1.0.0 → 1.1.0)\n- major: Breaking changes (1.0.0 → 2.0.0)\n\n## Process\n1. Determine new version\n2. Generate changelog from commits\n3. Update version files\n4. Create commit and tag\n\n## Output format\n### Release: v<version>\n\n### Changelog\n<generated>\n\n### Commands\n```bash\ngit push origin main --tags\n```\n\nVersion: {{{ input }}}"
+    },
+    {
+      "name": "context-prime",
+      "description": "Prime project context for Claude",
+      "prompt": "You are running the /context-prime workflow.\n\n## Process\n1. Read key files (README, CLAUDE.md)\n2. Detect tech stack\n3. Map project structure\n4. Identify architecture patterns\n5. Note code conventions\n\n## Output format\n### Project Overview\n### Tech Stack\n| Category | Technology |\n\n### Architecture\n<component overview>\n\n### Key Patterns\n- Routing: <pattern>\n- Auth: <pattern>\n\n### Entry Points\n| Purpose | File |\n\n---\n**Context loaded.**\n\nFocus area: {{{ input }}}"
+    },
+    {
+      "name": "context-save",
+      "description": "Persist project state and decisions",
+      "prompt": "You are running the /context-save workflow.\n\n## Categories to save\n1. Project overview\n2. Architecture decisions\n3. Current status (in progress, blocked)\n4. Code patterns\n5. Agent history\n\n## Storage\n.claude/context/<timestamp>.json\n\n## Output format\n### Context Saved\n**File**: <path>\n\n| Category | Items |\n|----------|-------|\n\n### Restore Command\n/context-restore <timestamp>\n\nMode: {{{ input }}}"
+    },
+    {
+      "name": "context-restore",
+      "description": "Restore saved project state",
+      "prompt": "You are running the /context-restore workflow.\n\n## Process\n1. Load context file\n2. Validate format\n3. Detect conflicts with current state\n4. Apply context\n\n## Output format\n### Context Restored\n**Source**: <file>\n**Age**: <time>\n\n### Project Overview\n### Architecture Decisions\n### Current Status\n### Conflicts Detected\n\n---\n**Context loaded.**\n\nVersion: {{{ input }}}"
+    },
+    {
+      "name": "doc-generate",
+      "description": "Generate docs from code",
+      "prompt": "You are running the /doc-generate workflow.\n\n## Types\n- api: OpenAPI/Swagger spec\n- jsdoc: JSDoc/TSDoc comments\n- readme: README with examples\n\n## Process\n1. Analyze code for exports/routes\n2. Extract types and parameters\n3. Generate documentation\n4. Add examples from tests\n\n## Output format\n### Documentation Generated\n| File | Type | Coverage |\n\n### Undocumented Items\n<list>\n\nTarget: {{{ input }}}"
+    },
+    {
+      "name": "full-review",
+      "description": "Multi-perspective code review",
+      "prompt": "You are running the /full-review workflow.\n\n## Perspectives\n1. Code Quality (readability, maintainability)\n2. Security (validation, auth, injection)\n3. Architecture (patterns, coupling)\n4. Performance (complexity, queries)\n\n## Severity\n- 🔴 Critical: Must fix\n- 🟠 High: Should fix\n- 🟡 Medium: Consider\n- 🔵 Low: Optional\n\n## Output format\n### Code Review\n#### 🔴 Critical\n| File | Issue | Fix |\n\n### Summary\n| Category | Critical | High |\n\n**Verdict**: Approve / Request Changes\n\nTarget: {{{ input }}}"
+    },
+    {
+      "name": "smart-fix",
+      "description": "Intelligent problem resolution",
+      "prompt": "You are running the /smart-fix workflow.\n\n## Problem classification\n| Pattern | Category |\n|---------|----------|\n| Stack trace | Runtime error |\n| Build failed | Build error |\n| Test failed | Test failure |\n| Slow/timeout | Performance |\n\n## Process\n1. Analyze problem type\n2. Investigate root cause\n3. Apply targeted fix\n4. Verify resolution\n\n## Output format\n### Smart Fix\n**Category**: <type>\n**Root cause**: <explanation>\n\n### Fix Applied\n| File | Change |\n\n**Status**: ✅ Fixed / ❌ Unresolved\n\nProblem: {{{ input }}}"
+    },
+    {
+      "name": "incident-response",
+      "description": "Production incident resolution",
+      "prompt": "You are running the /incident-response workflow.\n\n## Phases\n1. Immediate (0-5min): Assess severity, gather data\n2. Diagnosis (5-15min): Check deploys, logs, metrics\n3. Mitigation (15-30min): Rollback/hotfix/scale\n4. Stabilization: Monitor, clear backlog\n5. Postmortem: Document lessons\n\n## Output format\n### Incident Response\n**Status**: 🔴/🟡/🟢\n**Severity**: P<n>\n\n#### Timeline\n| Time | Event |\n\n#### Root Cause\n#### Mitigation\n#### Action Items\n\nIncident: {{{ input }}}"
+    },
+    {
+      "name": "tech-debt",
+      "description": "Technical debt analysis",
+      "prompt": "You are running the /tech-debt workflow.\n\n## Debt categories\n- Code: duplication, complexity, dead code\n- Architecture: circular deps, god objects\n- Testing: low coverage, flaky tests\n- Documentation: missing/outdated docs\n- Infrastructure: outdated deps, no CI\n\n## Prioritization\nHigh ROI + Low Effort = Do now\n\n## Output format\n### Technical Debt Report\n| Category | Items | Severity | Effort |\n\n### Critical Items\n| Item | Location | Fix |\n\n### Quick Wins\n| Item | Effort | Impact |\n\n### Recommendations\n1. Immediate: <action>\n2. This sprint: <action>\n\nTarget: {{{ input }}}"
     }
   ]
 }
