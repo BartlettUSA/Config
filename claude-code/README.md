@@ -121,4 +121,4 @@ Commands can invoke MCP tools by including phrases like:
 
 - [Cursor Commands](../cursor/README.md) - Same commands for Cursor IDE
 - [Continue Commands](../continue/README.md) - JSON format for Continue extension
-- [MCP Server Matrix](../../_dotfiles/MCP-SERVER-MATRIX.md) - Available MCP tools
+- [MCP Server Matrix](../../Dotfiles/MCP-SERVER-MATRIX.md) - Available MCP tools
