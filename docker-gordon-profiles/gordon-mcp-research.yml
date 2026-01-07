@@ -1,0 +1,21 @@
+# Gordon MCP Profile: Research
+# Use: Copy to working directory as gordon-mcp.yml
+# Tools: ~25 (search + documentation)
+# Purpose: Web research, documentation lookup
+
+services:
+  # Web search
+  duckduckgo:
+    image: mcp/duckduckgo
+
+  # Web fetch
+  fetch:
+    image: mcp/fetch
+
+  # Wikipedia for knowledge
+  wikipedia:
+    image: mcp/wikipedia
+
+  # Context7 for library docs
+  context7:
+    image: mcp/context7

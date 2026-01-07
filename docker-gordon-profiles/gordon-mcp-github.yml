@@ -1,0 +1,17 @@
+# Gordon MCP Profile: GitHub Operations
+# Use: Copy to working directory as gordon-mcp.yml
+# Tools: ~60 (GitHub + Git)
+# Purpose: Repository management, PRs, issues
+
+services:
+  # GitHub API operations
+  github:
+    image: mcp/github
+
+  # Local git operations
+  git:
+    image: mcp/git
+    command:
+      - /workspace
+    volumes:
+      - ${PWD}:/workspace

@@ -1,0 +1,17 @@
+# Gordon MCP Profile: Docker Operations
+# Use: Copy to working directory as gordon-mcp.yml
+# Tools: ~15 (Docker Hub + basic filesystem)
+# Purpose: Container management, image operations, Docker Desktop tasks
+
+services:
+  # Docker Hub operations - required for Gordon Docker tasks
+  docker-hub:
+    image: mcp/docker
+
+  # Basic filesystem for checking paths
+  filesystem:
+    image: mcp/filesystem
+    command:
+      - /workspace
+    volumes:
+      - ${PWD}:/workspace:ro

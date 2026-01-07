@@ -1,0 +1,13 @@
+# Gordon MCP Profile: Minimal
+# Use: Copy to working directory as gordon-mcp.yml
+# Tools: ~5 (time + fetch only)
+# Purpose: Basic queries without tool overload
+
+services:
+  # Time awareness
+  time:
+    image: mcp/time
+
+  # Basic web fetch for documentation
+  fetch:
+    image: mcp/fetch
