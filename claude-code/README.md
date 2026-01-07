@@ -8,10 +8,10 @@ Custom slash commands for [Claude Code](https://claude.ai/code) CLI.
 
 ```powershell
 # Option 1: Symlink (recommended - stays in sync)
-New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\commands" -Target "P:\dev\repos\Config\claude-code\commands"
+New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\commands" -Target "P:\dev\config\claude-code\commands"
 
 # Option 2: Copy
-Copy-Item -Recurse "P:\dev\repos\Config\claude-code\commands" "$env:USERPROFILE\.claude\"
+Copy-Item -Recurse "P:\dev\config\claude-code\commands" "$env:USERPROFILE\.claude\"
 ```
 
 For project-specific commands, place in `.claude/commands/` within the project.
@@ -121,4 +121,4 @@ Commands can invoke MCP tools by including phrases like:
 
 - [Cursor Commands](../cursor/README.md) - Same commands for Cursor IDE
 - [Continue Commands](../continue/README.md) - JSON format for Continue extension
-- [MCP Server Matrix](../../Dotfiles/MCP-SERVER-MATRIX.md) - Available MCP tools
+- [MCP Server Matrix](../../_dotfiles/MCP-SERVER-MATRIX.md) - Available MCP tools
