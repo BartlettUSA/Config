@@ -2,7 +2,7 @@
 
 Custom slash commands for [Claude Code](https://claude.ai/code) CLI.
 
-**Commands:** 37 | **Format:** Markdown + YAML frontmatter
+**Commands:** 41 | **Format:** Markdown + YAML frontmatter
 
 ## Installation
 
@@ -82,6 +82,9 @@ For project-specific commands, place in `.claude/commands/` within the project.
 | `/write-spec` | Turn description into tech spec | sonnet |
 | `/pr-description` | Generate PR description | sonnet |
 | `/research` | Deep research using MCP tools | sonnet |
+| `/utils-list` | List all utilities in Utilities repo | haiku |
+| `/utils-search` | Search utilities by keyword | haiku |
+| `/utils-check` | Check if utility exists before creating | haiku |
 
 ## Usage
 
