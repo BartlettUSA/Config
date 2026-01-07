@@ -275,7 +275,7 @@ P:\dev\repos\Config\
 │   └── slash-commands.json   # Commands for config.json
 ├── cursor\                   # Cursor IDE slash commands & rules
 │   ├── README.md             # Installation guide
-│   ├── commands\             # 41 slash commands (/plan, /implement, etc.)
+│   ├── commands\             # 38 slash commands (/plan, /implement, etc.)
 │   └── rules\                # Project rules (.mdc files)
 ├── vscode\                   # VS Code settings
 │   └── extensions.json       # Extension list
