@@ -1,0 +1,44 @@
+{
+  "permissions": {
+    "deny": [
+      "Shell(format)",
+      "Shell(diskpart)",
+      "Shell(bcdedit)",
+      "Shell(reg)",
+      "Shell(regedit)",
+      "Shell(sc)",
+      "Shell(net)",
+      "Shell(shutdown)",
+      "Shell(restart)",
+      "Shell(powercfg)",
+
+      "Shell(rm)",
+      "Shell(del)",
+      "Shell(erase)",
+      "Shell(rmdir)",
+      "Shell(rd)",
+
+      "Read(.env*)",
+      "Read(**/.env*)",
+      "Write(**/.env*)",
+
+      "Read(**/*.key)",
+      "Write(**/*.key)",
+      "Read(**/*.pem)",
+      "Write(**/*.pem)",
+      "Read(**/*.pfx)",
+      "Write(**/*.pfx)",
+      "Read(**/*id_rsa*)",
+      "Write(**/*id_rsa*)",
+
+      "Read(**/.ssh/**)",
+      "Write(**/.ssh/**)",
+      "Read(**/.aws/**)",
+      "Write(**/.aws/**)",
+      "Read(**/.azure/**)",
+      "Write(**/.azure/**)",
+      "Read(**/.kube/**)",
+      "Write(**/.kube/**)"
+    ]
+  }
+}

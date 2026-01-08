@@ -44,7 +44,8 @@
         "darwin": "~/.cursor"
       },
       "files": [
-        { "source": "templates/cursor/mcp.json", "target": "mcp.json" }
+        { "source": "templates/cursor/mcp.json", "target": "mcp.json" },
+        { "source": "templates/cursor/cli-config.json", "target": "cli-config.json", "optional": true }
       ]
     },
 

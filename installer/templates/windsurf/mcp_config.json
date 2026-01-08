@@ -17,16 +17,94 @@
       "command": "npx",
       "args": ["-y", "kapture-mcp", "bridge"]
     },
+    "auth0": {
+      "command": "npx",
+      "args": ["-y", "@auth0/auth0-mcp-server", "run"],
+      "env": {
+        "DEBUG": "auth0-mcp"
+      }
+    },
     "playwright": {
       "command": "npx",
       "args": ["-y", "@playwright/mcp@latest"]
     },
-    "github": {
+    "figma": {
+      "command": "infisical",
+      "args": [
+        "run",
+        "--projectId={{INFISICAL_PROJECT_ID}}",
+        "--env={{INFISICAL_ENV}}",
+        "--path=/",
+        "--silent",
+        "--log-level=error",
+        "--",
+        "npx",
+        "-y",
+        "figma-mcp"
+      ]
+    },
+    "ms-learn-docs": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "args": ["-y", "mcp-remote", "https://learn.microsoft.com/api/mcp"]
+    },
+    "hugging-face": {
+      "command": "npx",
+      "args": ["-y", "@llmindset/mcp-hfspace"]
+    },
+    "skills": {
+      "command": "node",
+      "args": ["{{SKILLS_SERVER_PATH}}/dist/index.js"],
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "{{SECRET:GITHUB_PERSONAL_ACCESS_TOKEN}}"
+        "SKILLS_PATH": "{{SKILLS_SERVER_PATH}}/skills"
       }
+    },
+    "obsidian": {
+      "command": "infisical",
+      "args": [
+        "run",
+        "--projectId={{INFISICAL_PROJECT_ID}}",
+        "--env={{INFISICAL_ENV}}",
+        "--path=/",
+        "--silent",
+        "--log-level=error",
+        "--",
+        "npx",
+        "-y",
+        "obsidian-mcp"
+      ],
+      "env": {
+        "OBSIDIAN_BASE_URL": "http://127.0.0.1:27123"
+      }
+    },
+    "firecrawl": {
+      "command": "infisical",
+      "args": [
+        "run",
+        "--projectId={{INFISICAL_PROJECT_ID}}",
+        "--env={{INFISICAL_ENV}}",
+        "--path=/",
+        "--silent",
+        "--log-level=error",
+        "--",
+        "npx",
+        "-y",
+        "firecrawl-mcp"
+      ]
+    },
+    "github": {
+      "command": "infisical",
+      "args": [
+        "run",
+        "--projectId={{INFISICAL_PROJECT_ID}}",
+        "--env={{INFISICAL_ENV}}",
+        "--path=/",
+        "--silent",
+        "--log-level=error",
+        "--",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ]
     }
   }
 }

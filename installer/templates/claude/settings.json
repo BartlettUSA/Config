@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(docker:*)",
+      "Bash(chezmoi:*)",
       "Bash(git status)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
@@ -11,21 +12,33 @@
       "Bash(cat:*)",
       "Bash(grep:*)",
       "Bash(find:*)",
+      "Bash(where:*)",
       "Bash(echo:*)",
       "Bash(pwd:*)",
       "Bash(which:*)",
       "Bash(type:*)",
       "Bash(head:*)",
       "Bash(tail:*)",
+      "Bash(more:*)",
+      "Bash(less:*)",
+      "Bash(findstr:*)",
       "Bash(rg:*)",
+      "Bash(awk:*)",
+      "Bash(sed:*)",
       "Bash(git:*)",
+      "Bash(sqlite3:*)",
       "Bash(python:*)",
-      "Bash(python3:*)",
+      "Bash(gh auth status:*)",
+      "Bash(gh auth token:*)",
+      "Bash(claude mcp add:*)",
+      "Bash(claude mcp list:*)",
+      "Bash(claude mcp remove:*)",
+      "Read(~/.claude/**)",
       "Read(~/**)"
     ],
     "deny": [
-      "Bash(rm -rf /)",
-      "Bash(sudo rm -rf:*)",
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)",
       "Bash(git push --force:*)",
       "Bash(git reset --hard:*)",
       "Read(.env*)",
@@ -40,7 +53,12 @@
   "mcpServers": {
     "MCP_DOCKER": {
       "command": "docker",
-      "args": ["mcp", "gateway", "run"]
+      "args": ["mcp", "gateway", "run"],
+      "env": {
+        "LOCALAPPDATA": "{{ENV:LOCALAPPDATA}}",
+        "ProgramData": "{{ENV:ProgramData}}",
+        "ProgramFiles": "{{ENV:ProgramFiles}}"
+      }
     },
     "context7": {
       "command": "npx",
@@ -49,6 +67,99 @@
     "kapture": {
       "command": "npx",
       "args": ["-y", "kapture-mcp", "bridge"]
+    },
+    "auth0": {
+      "command": "npx",
+      "args": ["-y", "@auth0/auth0-mcp-server", "run"],
+      "env": {
+        "DEBUG": "auth0-mcp"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "figma": {
+      "command": "infisical",
+      "args": [
+        "run",
+        "--projectId={{INFISICAL_PROJECT_ID}}",
+        "--env={{INFISICAL_ENV}}",
+        "--path=/",
+        "--silent",
+        "--log-level=error",
+        "--",
+        "npx",
+        "-y",
+        "figma-mcp"
+      ]
+    },
+    "ms-learn-docs": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://learn.microsoft.com/api/mcp"]
+    },
+    "hugging-face": {
+      "command": "npx",
+      "args": ["-y", "@llmindset/mcp-hfspace"]
+    },
+    "skills": {
+      "command": "node",
+      "args": ["{{SKILLS_SERVER_PATH}}/dist/index.js"],
+      "env": {
+        "SKILLS_PATH": "{{SKILLS_SERVER_PATH}}/skills"
+      }
+    },
+    "obsidian": {
+      "command": "infisical",
+      "args": [
+        "run",
+        "--projectId={{INFISICAL_PROJECT_ID}}",
+        "--env={{INFISICAL_ENV}}",
+        "--path=/",
+        "--silent",
+        "--log-level=error",
+        "--",
+        "npx",
+        "-y",
+        "obsidian-mcp"
+      ],
+      "env": {
+        "OBSIDIAN_BASE_URL": "http://127.0.0.1:27123"
+      }
+    },
+    "firecrawl": {
+      "command": "infisical",
+      "args": [
+        "run",
+        "--projectId={{INFISICAL_PROJECT_ID}}",
+        "--env={{INFISICAL_ENV}}",
+        "--path=/",
+        "--silent",
+        "--log-level=error",
+        "--",
+        "npx",
+        "-y",
+        "firecrawl-mcp"
+      ]
+    },
+    "github": {
+      "command": "infisical",
+      "args": [
+        "run",
+        "--projectId={{INFISICAL_PROJECT_ID}}",
+        "--env={{INFISICAL_ENV}}",
+        "--path=/",
+        "--silent",
+        "--log-level=error",
+        "--",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ]
+    },
+    "utilities": {
+      "command": "python",
+      "args": ["{{UTILITIES_MCP_PATH}}/server.py"]
     }
   }
 }

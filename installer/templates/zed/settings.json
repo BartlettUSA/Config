@@ -1,29 +1,44 @@
 {
-  "assistant": {
-    "version": "2",
-    "provider": "anthropic"
-  },
   "context_servers": {
     "MCP_DOCKER": {
-      "command": {
-        "path": "docker",
-        "args": ["mcp", "gateway", "run"]
+      "command": "docker",
+      "args": ["mcp", "gateway", "run"],
+      "env": {
+        "LOCALAPPDATA": "{{ENV:LOCALAPPDATA}}",
+        "ProgramData": "{{ENV:ProgramData}}",
+        "ProgramFiles": "{{ENV:ProgramFiles}}"
       }
     },
     "context7": {
-      "command": {
-        "path": "npx",
-        "args": ["-y", "@upstash/context7-mcp"]
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "kapture": {
+      "command": "npx",
+      "args": ["-y", "kapture-mcp", "bridge"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "ms-learn-docs": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://learn.microsoft.com/api/mcp"]
+    },
+    "hugging-face": {
+      "command": "npx",
+      "args": ["-y", "@llmindset/mcp-hfspace"]
+    },
+    "skills": {
+      "command": "node",
+      "args": ["{{SKILLS_SERVER_PATH}}/dist/index.js"],
+      "env": {
+        "SKILLS_PATH": "{{SKILLS_SERVER_PATH}}/skills"
       }
     },
-    "github": {
-      "command": {
-        "path": "npx",
-        "args": ["-y", "@modelcontextprotocol/server-github"],
-        "env": {
-          "GITHUB_PERSONAL_ACCESS_TOKEN": "{{SECRET:GITHUB_PERSONAL_ACCESS_TOKEN}}"
-        }
-      }
+    "obsidian": {
+      "command": "npx",
+      "args": ["-y", "obsidian-mcp", "{{OBSIDIAN_VAULT_PATH}}"]
     }
   }
 }
