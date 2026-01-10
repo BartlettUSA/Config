@@ -13,6 +13,20 @@
       "command": "npx",
       "args": ["-y", "@upstash/context7-mcp"]
     },
+    "skills": {
+      "command": "node",
+      "args": ["{{CONFIG:idcpPath:P:/dev/repos/IDCP}}/backend/mcp-servers/skills/dist/index.js"],
+      "env": {
+        "SKILLS_PATH": "{{CONFIG:skillsPath:P:/dev/repos/IDCP/backend/mcp-servers/skills/skills}}"
+      }
+    },
+    "prompts-library": {
+      "command": "node",
+      "args": ["{{CONFIG:idcpPath:P:/dev/repos/IDCP}}/backend/mcp-servers/prompts-library/dist/index.js"],
+      "env": {
+        "PROMPTS_PATH": "{{CONFIG:promptsPath:P:/dev/repos/IDCP/backend/mcp-servers/prompts-library/prompts}}"
+      }
+    },
     "kapture": {
       "command": "npx",
       "args": ["-y", "kapture-mcp", "bridge"]
